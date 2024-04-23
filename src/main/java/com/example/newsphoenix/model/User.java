@@ -32,6 +32,7 @@ public class User extends BaseEntityAudit implements UserDetails {
 
     private String password;
 
+    private String avatar;
     @Enumerated
     @Column(name = "role", nullable = false)
     private Role role;

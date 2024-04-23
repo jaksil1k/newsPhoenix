@@ -21,6 +21,9 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterDto registerDto) {
+        if (!registerDto.getPassword().equals(registerDto.getRepeatedPassword())) {
+            return ResponseEntity.badRequest().build();
+        }
         try {
             var response = authenticationService.register(registerDto);
             return ResponseEntity.ok().body(response);

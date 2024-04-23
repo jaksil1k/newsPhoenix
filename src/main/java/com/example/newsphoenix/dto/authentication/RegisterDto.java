@@ -22,4 +22,11 @@ public class RegisterDto {
     @JsonProperty("password")
     @NotBlank(message = "Password is mandatory")
     private String password;
+
+    @JsonProperty("repeated_password")
+    @NotBlank(message = "Repeated password is mandatory")
+    private String repeatedPassword;
+
+    @JsonProperty("avatar")
+    private String avatar;
 }
