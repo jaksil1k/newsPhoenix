@@ -1,7 +1,7 @@
 package com.example.newsphoenix.config;
 
 
-import com.example.newsphoenix.util.JwtUtil;
+import com.example.newsphoenix.utils.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

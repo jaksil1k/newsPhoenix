@@ -17,6 +17,9 @@ public class AuditorAwareImpl implements AuditorAware<UUID> {
         if (!authentication.isAuthenticated()) {
             return Optional.empty();
         }
+        if (authentication instanceof AnonymousAuthenticationToken) {
+            return Optional.empty();
+        }
         var user = (User) authentication.getPrincipal();
         return Optional.of(user.getId());
     }

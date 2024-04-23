@@ -1,4 +1,4 @@
-package com.example.newsphoenix.util;
+package com.example.newsphoenix.utils;
 
 import com.example.newsphoenix.model.User;
 import io.jsonwebtoken.Claims;
