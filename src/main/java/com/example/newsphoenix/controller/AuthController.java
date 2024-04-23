@@ -4,6 +4,7 @@ import com.example.newsphoenix.dto.authentication.LoginDto;
 import com.example.newsphoenix.dto.authentication.RegisterDto;
 import com.example.newsphoenix.exception.EmailAlreadyExistsException;
 import com.example.newsphoenix.service.AuthenticationService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,7 @@ public class AuthController {
     private final AuthenticationService authenticationService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterDto registerDto) {
+    public ResponseEntity<?> register(@Valid @RequestBody RegisterDto registerDto) {
         try {
             var response = authenticationService.register(registerDto);
             return ResponseEntity.ok().body(response);
@@ -31,7 +32,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginDto loginDto) {
+    public ResponseEntity<?> login(@Valid @RequestBody LoginDto loginDto) {
         try {
             var response = authenticationService.login(loginDto);
             return ResponseEntity.ok().body(response);

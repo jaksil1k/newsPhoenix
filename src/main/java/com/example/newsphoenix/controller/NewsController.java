@@ -2,6 +2,7 @@ package com.example.newsphoenix.controller;
 
 import com.example.newsphoenix.dto.news.NewsDto;
 import com.example.newsphoenix.service.NewsService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class NewsController {
 
     @PostMapping
     public ResponseEntity<?> create(
-            @RequestBody NewsDto newsDto
+            @Valid @RequestBody NewsDto newsDto
             ) {
         return ResponseEntity.ok().body(newsService.save(newsDto));
     }
