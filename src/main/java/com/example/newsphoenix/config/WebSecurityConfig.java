@@ -27,6 +27,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain filter(HttpSecurity http) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable)
+                .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/healthcheck").permitAll()
                         .requestMatchers("/auth/**").permitAll()
