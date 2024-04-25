@@ -1,9 +1,10 @@
 # newsPhoenix
 
 ## Description
-Hello, it's simple news app with auth and docker.
+Hello, it's simple news app with auth and docker with swagger.
 
 I created this project for the test task.
+All endpoints listed in swagger in ${url}/api/swagger-ui/index.html#/
 
 ## Implemented
 
